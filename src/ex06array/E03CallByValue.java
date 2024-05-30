@@ -12,17 +12,34 @@ Call By Value(값에 의한 호출)
 public class E03CallByValue {
 
   public static void main(String[] args) {
+    //main 지역에서 최초로 변수를 생성한다.
     int first = 100, second = 200;
-
+    //출력1: 100, 200
     System.out.println("[main메서드안-호출전] first=" + first + ", second=" + second);
+    //메서드 호출시 인수로 값을 전달한다.
     callByValue(first, second);
+
+    /*출력2 : 매개변수로 전달된 값은 복사되어 다른 지역의 메서드 내에서만;
+                변경되므로 main메서드의 값은 변함이 없다. */
     System.out.println("[main메서드안-호출후] first=" + first + ", second=" + second);
   }
+  /*
+  매개변수로 전달된 값은 복사되어 해당 지역의 메서드에서 사용할 수 있게된다.
+  즉 매개변수의 전달은 메모리의 복사에 의해 이뤄진다. 
+   */
   public static void callByValue(int fNum, int sNum) {
+    /*
+    Swap(교환) : 두개의 변수가 할당받은 값을 서로 교환하는 알고리즘을
+     의미한다. 교환시에는 임시변수(temp)가 하나 추가로 필요하다.
+     */
     int temp;
     temp = fNum;
     fNum = sNum;
     sNum = temp;
+    /*
+    해당 메서드 내에서는 값의 교환이 완료되었으므로 출력결과는
+    200, 100이 된다.
+     */
     System.out.println("[callByValue메서드안] first=" + fNum + ", second=" + sNum);
   }
 }
