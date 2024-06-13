@@ -1,31 +1,75 @@
 package ex07string;
-import java.util.Scanner;
 
 public class E02StringMethod4 {
-	/*
-	시나리오1] 주민등록번호를 이용하여 성별을 판단하는
-	프로그램을 charAt()을 이용해서 작성하시오.
-	190419-3000000 => 남자
-	190419-4000000 => 여자
-	*/
-  public static void main(String[] args) {
-      Scanner scanner = new Scanner(System.in);
 
-      System.out.println("주민등록번호를 입력하세요:");
-      String idNumber = scanner.nextLine();
+    public static void main(String[] args) {
 
-      printGender(idNumber);
-  }
+        /*
+         * 시나리오1] 주민등록번호를 이용하여 성별을 판단하는
+         * 프로그램을 charAt()을 이용해서 작성하시오.
+         * 190419-3000000 => 남자
+         * 190419-4000000 => 여자
+         */
+        System.out.println("### 시나리오1 ###");
+        String juminNum1 = "190419-4000000";
+        System.out.println("7번째문자추출 = " + juminNum1.charAt(7));
+        // 추출한 문자를 변수에 저장
+        char gender = juminNum1.charAt(7);
+        if (gender == '1' || gender == '3') {
+            System.out.println("남자입니다.");
+        } else if (gender == '2' || gender == '4') {
+            System.out.println("여자입니다.");
+        } else if (gender == '5' || gender == '6') {
+            System.out.println("외국인입니다.");
+        } else {
+            System.out.println("주민번호가 잘못입력하셨습니다.");
+        }
 
-  public static void printGender(String idNumber) {
-      char genderCode = idNumber.charAt(7);
+        /*
+         * 시나리오2] 해당 문자열이 이메일 형식인지 검사하는
+         * 프로그램을 contains()를 이용해서 작성하시오.
+         * hong@daum.net => 이메일형식임
+         * not@naver => 이메일형식이아님
+         */
+        System.out.println("### 시나리오2 ###");
+        String email = "hong@daum.net";
+        System.out.println("포함된문자확인하기 = " + email.contains("@"));
 
-      if (genderCode == '3') {
-          System.out.println("남자");
-      } else if (genderCode == '4') {
-          System.out.println("여자");
-      } else {
-          System.out.println("유효하지 않은 주민등록번호입니다.");
-      }
-  }
+        if (email.contains("@") && email.contains(".")) {
+            System.out.println("이메일 형식 맞음");
+        } else {
+            System.out.println("이메일 형식 아님. 확인요망.");
+        }
+
+        /*
+         * 시나리오3]주민등록번호로 성별을 구분하는 프로그램을 indexOf()와 charAt()을
+         * 이용해서 작성하시오. 하이픈의 위치를 먼저 찾은 후 성별에 해당하는 문자를 찾아 출력한다.
+         */
+        System.out.println("### 시나리오3 ###");
+        String jumin = "120419-6000000";
+        System.out.println("하이픈위치찾기 = " + jumin.indexOf("-"));
+        int genderIndex = jumin.indexOf("-") + 1;
+
+        if (jumin.charAt(genderIndex) == '1' || jumin.charAt(genderIndex) == '3') {
+            System.out.println("남자임");
+        } else if (jumin.charAt(genderIndex) == '2' || jumin.charAt(genderIndex) == '4') {
+            System.out.println("여자임");
+        } else {
+            System.out.println("주민번호가 잘못되었습니다.");
+        }
+
+        /*
+         * 시나리오4] 다음 파일명에서 확장자를 잘라내는 프로그램을
+         * 작성하시오.
+         * 파일명 : my.file.images.jpg
+         */
+        System.out.println("### 시나리오4 ###");
+        String filename = "my.file.images.jpg";
+        // 파일명의 뒷부분부터 .의 위치를 찾는다.
+        int dotPoIdx = filename.lastIndexOf(".");
+        // .의 위치를 다음의 문자열부터 잘라내므로 +1을 한다.
+        String fileExt = filename.substring(dotPoIdx + 1);
+        System.out.println("파일의 확장자 =  " + fileExt);
+    }
+
 }

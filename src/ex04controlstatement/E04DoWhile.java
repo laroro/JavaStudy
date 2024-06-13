@@ -67,22 +67,22 @@ public class E04DoWhile {
             // switch문은 조건식을 사용할 수 없고, 산술식만 사용할 수 있으므로 이와같이 처리
             avg = (kor + eng + math) / (3 * 10);
             switch (avg) {
-            case 10:
-            case 9:
-                System.out.println("A학점");
-                break;
-            case 8:
-                System.out.println("B학점");
-                break;
-            case 7:
-                System.out.println("C학점");
-                break;
-            case 6:
-                System.out.println("D학점");
-                break;
-            default:
-                System.out.println("F학점");
-                break;
+                case 10:
+                case 9:
+                    System.out.println("A학점");
+                    break;
+                case 8:
+                    System.out.println("B학점");
+                    break;
+                case 7:
+                    System.out.println("C학점");
+                    break;
+                case 6:
+                    System.out.println("D학점");
+                    break;
+                default:
+                    System.out.println("F학점");
+                    break;
             }
             System.out.print("종료하려면 x(X)를 입력하세요.");
             System.out.print("계속하려면 아무 키나 입력하세요.");

@@ -24,15 +24,15 @@ public class E02Switch {
         // 정수를 3으로 나누면 나머지는 0,1,2만 생성된다.
         int remain = iNum % 3;
         switch (remain) {
-        case 0:
-            System.out.println("나머지가 0입니다.");
-            break;
-        case 1:
-            System.out.println("나머지가 1입니다.");
-            break;
-        default:
-            System.out.println("나머지가 2입니다.");
-            // default 다음에는 실행할 문장이 없으므로 break는 생략한다.
+            case 0:
+                System.out.println("나머지가 0입니다.");
+                break;
+            case 1:
+                System.out.println("나머지가 1입니다.");
+                break;
+            default:
+                System.out.println("나머지가 2입니다.");
+                // default 다음에는 실행할 문장이 없으므로 break는 생략한다.
         }
 
         // switch문 사용시 주의사항
@@ -54,37 +54,37 @@ public class E02Switch {
         // 문자열이나 문자 사용할 수 있다.
         String title = "자바";
         switch (title) {
-        case "자바":
-            System.out.println("자바 좋아");
-            break;
-        case "JAVA":
-            System.out.println("JAVA Gooood");
-            break;
+            case "자바":
+                System.out.println("자바 좋아");
+                break;
+            case "JAVA":
+                System.out.println("JAVA Gooood");
+                break;
         }
 
         // 여러 case를 동시에 처리할 때는 break문 없이 case를 나열한다.
         // if문에서 ||(논리OR)를 사용한 것과 동일하다.
         int season = 8;
         switch (season) {
-        case 3:
-        case 4:
-        case 5:
-            System.out.println("봄입니다.");
-            break;
-        case 6:
-        case 7:
-        case 8:
-        case 9:
-            System.out.println("여름입니다.");
-            break;
-        case 10:
-            System.out.println("가을입니다.");
-            break;
-        case 11:
-        case 12:
-        case 1:
-        case 2:
-            System.out.println("겨울입니다.");
+            case 3:
+            case 4:
+            case 5:
+                System.out.println("봄입니다.");
+                break;
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+                System.out.println("여름입니다.");
+                break;
+            case 10:
+                System.out.println("가을입니다.");
+                break;
+            case 11:
+            case 12:
+            case 1:
+            case 2:
+                System.out.println("겨울입니다.");
         }
         /*
          * 시나리오] 국,영,수 점수의 평균값을 구하여 학점을 출력하는 프로그램을 작성하시오. 90점이상은 A학점... 60점 미만은 F학점을
@@ -104,21 +104,21 @@ public class E02Switch {
 
         // 학점을 구하기 위한 평균값의 10으로 나눈 몫을 이용한다.
         switch (avg / 10) {
-        case 10:
-        case 9:
-            System.out.println("A학점");
-            break;
-        case 8:
-            System.out.println("B학점");
-            break;
-        case 7:
-            System.out.println("C학점");
-            break;
-        case 6:
-            System.out.println("D학점");
-            break;
-        default:
-            System.out.println("F학점");
+            case 10:
+            case 9:
+                System.out.println("A학점");
+                break;
+            case 8:
+                System.out.println("B학점");
+                break;
+            case 7:
+                System.out.println("C학점");
+                break;
+            case 6:
+                System.out.println("D학점");
+                break;
+            default:
+                System.out.println("F학점");
         }
     }
 

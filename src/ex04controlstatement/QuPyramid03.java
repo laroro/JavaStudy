@@ -4,20 +4,25 @@ public class QuPyramid03 {
 
     public static void main(String[] args) {
 
-        int num = 5;
+        /*
+         * 다음과 같은 모양을 출력하는 프로그램을 for문으로 작성하시오.
+         * 실행결과]
+         *         *
+         *        ***
+         *       *****
+         *      *******
+         *     *********
+         */
 
-        //행을 반복하는 부분
-        for(int i=0 ; i<num ; i++) {
-            //공백을 출력하는 부분
-        	for(int j=1 ; j<=num-i ; j++) {
+        for (int i = 1; i <= 5; i++) {
+            for (int j = 5; j > i; j--) {
                 System.out.print(" ");
             }
-        	// *를 출력하는 부분
-            for(int k=0 ; k<i*2+1 ; k++) {
+            for (int k = 1; k <= (i * 2 - 1); k++) {
                 System.out.print("*");
             }
-            //줄바꿈 처리
             System.out.println();
         }
     }
+
 }
